@@ -1,7 +1,6 @@
 # FW追加試験テストツールの使用方法
 
-## 疎通確認環境と構築方法
-* ソース互換性：Python 3.6以上
+## 開発環境
 * スクリプト開発環境：Windows10/PyCharm/Python 3.6.8/Scapy 2.4.0
     1. PyCharmで新規プロジェクト作成
         1. 「New environment using」で VirtualEnvを指定
@@ -20,13 +19,22 @@
         setuptools 39.1.0
          ```
 
-* 実行環境 Windows10/Ptthon 3.6.8/Scapy(latest)
-    1. Pythonは3.6.8 をインストール
-    2. Pythonと、Python/ScriptsにPathを通す。
-    3. winpcap4.1.3をインストール (wireshark環境でインストール済）
-    4. https://github.com/secdev/scapyから最新版zipをダウンロード
-    5. 展開したディレクトリで、python setup.py installを実行
-
+## 実行環境
+1. git clone https://github.com/thetsuthetsu/Scapy.git
+2. cd Scapy
+3. virtualenvを起動
+    1. Script\activate
+    2. pythonバージョンが3.6.8であることを確認
+        ```
+        (Scapy) C:\work\Scapy>python --version
+        Python 3.6.8
+        ```
+4. 任意のスクリプトを実行
+    ```
+    (Scapy) C:\work\Scapy>python repeatable_icmp.py
+    Usage: # python repeatable_icmp.py source_ip target_ip repeat iface [icmp_type]
+    ```
+        
 ## 追加テスト要件
 1. H/U - サーバ間のTCPプロトコル異常データ時のDCMで処置
     1. TCPセッションタイムアウト後のサーバからのTCP FIN
