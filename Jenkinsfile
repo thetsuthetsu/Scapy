@@ -13,8 +13,8 @@ pipeline {
         }
         stage('DETECT') {
             steps {
-                synopsys_detect detectProperties: '--blackduck.url=https://192.168.150.213 --blackduck.username=sysadmin --blackduck.password=blackduck --blackduck.trust.cert=true --detect.blackduck.signature.scanner.individual.file.matching=ALL --snippet-matching-all-source', downloadStrategyOverride: [$class: 'ScriptOrJarDownloadStrategy']
-            }
+                synopsys_detect detectProperties: '--blackduck.url=https://192.168.150.213 --blackduck.api.token=NmQxZmE0Y2QtOWFkNS00ZTZjLThhZjctMDRjMTgwMzExMzdjOmQ2NzliODQ1LTQxMGItNGQwZC04MDA1LWJlYmMxMjk4ZWZhYg== --blackduck.trust.cert=true --detect.blackduck.signature.scanner.individual.file.matching=ALL --snippet-matching-all-source', downloadStrategyOverride: [$class: 'ScriptOrJarDownloadStrategy']
+            }            
         }
     }
     post {
